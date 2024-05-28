@@ -114,3 +114,14 @@
     flex-direction: column;
   }
 }
+
+.mainnav ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.mainnav ul li {
+  padding-left: 56px;
+  font-size: 21px;
+}

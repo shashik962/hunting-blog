@@ -51,7 +51,6 @@
 }
 
 .description {
-  margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -124,4 +123,12 @@
 .mainnav ul li {
   padding-left: 56px;
   font-size: 21px;
+}
+
+.imagewrap {
+  padding: 10px;
+}
+
+.myImg {
+  border-radius: 10px;
 }

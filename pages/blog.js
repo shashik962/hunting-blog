@@ -8,7 +8,7 @@ function Blog() {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
       console.log('useEffect is running!');
-      fetch('http://localhost:3001/api/blogs').then((a) => {
+      fetch('http://localhost:3000/api/blogs').then((a) => {
         return a.json();
       }).then((parsed) => {
           console.log(parsed);

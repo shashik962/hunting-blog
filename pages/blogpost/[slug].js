@@ -5,21 +5,8 @@ import styles from "../../styles/BlogPost.module.css"
 
 // Step 1: Find the file corresponding to the slug;
 // Step 2: Populate them inside the page
-function Slug() {
-    const [blog, setBlog] = useState();
-    const router = useRouter();
-    console.log(router.query);
-    useEffect(() => {
-      if (!router.isReady) return ;
-      const {slug} = router.query;
-      fetch(`http://localhost:3000/api/getblog?slug=${slug}`).then((a) => {
-        return a.json();
-      }).then((parsed) => {
-          console.log(parsed);
-          setBlog(parsed);
-      });
-    }, [router.isReady])
-   
+function Slug(props) {
+  const [blog, setBlog] = useState(props.myBlog);
   return (
     <div className={styles.container}>
       <main className={styles.main} >
@@ -31,6 +18,16 @@ function Slug() {
       </main>
     </div> 
   )
+}
+
+
+
+export async function getServerSideProps(context) {
+  // console.log(context.query);
+  const {slug} = context.query;
+  let data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`);
+  let myBlog = await data.json();
+  return { props: {myBlog} }
 }
 
 export default Slug

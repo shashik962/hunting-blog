@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 function Navbar() {
   return (
-    <nav class={styles.mainnav}>
+    <nav className={styles.mainnav}>
         <ul>
             <Link href='/'><li>Home</li></Link>
             <Link href='/about'><li>About</li></Link>

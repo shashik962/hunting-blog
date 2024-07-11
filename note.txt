@@ -1,0 +1,4 @@
+1. use large scale list with scroll -->   npm install --save react-infinite-scroll-component
+
+
+ 
